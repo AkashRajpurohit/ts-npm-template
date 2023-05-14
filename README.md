@@ -13,7 +13,7 @@
   </a>
   <img alt="Visitors count" src="https://visitor-badge.laobi.icu/badge?page_id=@akashrajpurohit~ts-npm-template.visitor-badge&style=flat-square&color=0088cc">
   <a href="https://github.com/AkashRajpurohit/ts-npm-template/actions">
-    <img alt="Coverage" src="https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AkashRajpurohit/7336f237b82d9581c5f52405f87db531/raw/ts-npm-template-coverage.json">
+    <img alt="Coverage" src="https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AkashRajpurohit/275fdb9d0c3b23cafa916535c807ce6a/raw/ts-npm-template-coverage.json">
   </a>
   <a href="https://www.npmjs.com/package/@akashrajpurohit/ts-npm-template">
     <img alt="NPM license" src="https://img.shields.io/npm/l/@akashrajpurohit/ts-npm-template">
@@ -41,12 +41,49 @@ That is pretty much it, follow the steps for creating a new repository and its d
 
 > Refer to [Sample README](./README.sample.md) file to setup docs and instructions for your package.
 
+## Configurations ⚙️
+
+### Release to NPM
+
+Few configurations are required for making the publishing and releasing to NPM automated.
+
+First thing is to generate a NPM token. Automation tokens are recommended since they can be used for an automated workflow, even when your account is configured to use the [auth-and-writes level of 2FA](https://docs.npmjs.com/about-two-factor-authentication#authorization-and-writes).
+
+Save this token as `NPM_TOKEN`.
+
+### Code coverage badge
+
+If you want to generate a code coverage badge for your package, you need to follow the steps and configure the gist mentioned by [dynamic-badges-action](https://github.com/Schneegans/dynamic-badges-action).
+
+If you wish to skip this step then remove these steps from [workflow file](./.github/workflows/test-and-release.yml)
+
+```
+# Steps to remove -> Get Coverage for badge 🔢 and Create coverage badge ✍🏽
+
+- name: Get Coverage for badge 🔢
+  run: |
+    COVERAGE="$(cat coverage/coverage-summary.json | jq -r '.total.lines.pct')"
+    echo "COVERAGE=$(echo ${COVERAGE})" >> $GITHUB_ENV
+
+- name: Create coverage badge ✍🏽
+  uses: schneegans/dynamic-badges-action@v1.6.0
+  with:
+    auth: ${{ secrets.GIST_SECRET }}
+    gistID: 275fdb9d0c3b23cafa916535c807ce6a
+    filename: ts-npm-template-coverage.json
+    label: Code Coverage
+    message: ${{ env.COVERAGE }}
+    color: green
+    namedLogo: vitest
+```
+
 ## Technology Stack 🚀
 
 - 🙏🏾 [Typescript](https://www.typescriptlang.org/) with [tsup](https://tsup.egoist.dev/) build tool.
 - ⚡️ [Vitest](https://vitest.dev/) - Unit Test Framework
 - 📦 [Semantic Release](https://semantic-release.gitbook.io/semantic-release/) - Fully automated version management and package publishing.
 - 🔀 [Github Actions](https://github.com/features/actions) - CI pipelines
+- 💪 [PNPM](https://pnpm.io/) - Package manager
 
 ## Bugs or Requests 🐛
 
