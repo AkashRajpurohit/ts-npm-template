@@ -1,0 +1,131 @@
+name: Release
+
+on: [push, workflow_dispatch]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🧳
+        uses: actions/checkout@v3
+
+      - name: Install Node.js 🔥
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install pnpm 👀
+        uses: pnpm/action-setup@v2
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Get pnpm store directory 🏪
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Setup pnpm cache 💰
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies ⏬
+        run: pnpm install
+
+      - name: Build ⏰
+        run: pnpm build
+        env:
+          NODE_ENV: production
+
+      - name: Test 🔫
+        run: pnpm test:coverage
+
+      - name: Report Coverage 📝
+        if: always() # Also generate the report if tests are failing
+        uses: davelosert/vitest-coverage-report-action@v1
+
+      - name: Get Coverage for badge 🔢
+        run: |
+          COVERAGE="$(cat coverage/coverage-summary.json | jq -r '.total.lines.pct')"
+          echo "COVERAGE=$(echo ${COVERAGE})" >> $GITHUB_ENV
+
+      - name: Create coverage badge ✍🏽
+        uses: schneegans/dynamic-badges-action@v1.6.0
+        with:
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: 275fdb9d0c3b23cafa916535c807ce6a
+          filename: ts-npm-template-coverage.json
+          label: Code Coverage
+          message: ${{ env.COVERAGE }}
+          color: green
+          namedLogo: vitest
+
+      - name: Upload Test Results ⏫
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage
+          path: coverage/
+
+  release:
+    # Release only when code is pushed to main branch
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
+    needs: [test]
+    steps:
+      - name: Checkout 🧳
+        uses: actions/checkout@v3
+
+      - name: Install Node.js 🔥
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install pnpm 👀
+        uses: pnpm/action-setup@v2
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Get pnpm store directory 🏪
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Setup pnpm cache 💰
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies ⏬
+        run: pnpm install
+
+      - name: Build ⏰
+        run: pnpm build
+        env:
+          NODE_ENV: production
+          
+      - name: Release 🚀
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: pnpm semantic-release
