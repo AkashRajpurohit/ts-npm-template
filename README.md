@@ -31,7 +31,7 @@
 <br />
 <hr />
 
-`@akashrajpurohit/ts-npm-template` is a opinionated bootstrap template to create NPM packages. 
+`@akashrajpurohit/ts-npm-template` is a opinionated bootstrap template to create NPM packages.
 
 ## Usage 💻
 
