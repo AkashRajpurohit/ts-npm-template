@@ -55,11 +55,9 @@ Save this token as `NPM_TOKEN`.
 
 If you want to generate a code coverage badge for your package, you need to follow the steps and configure the gist mentioned by [dynamic-badges-action](https://github.com/Schneegans/dynamic-badges-action).
 
-If you wish to skip this step then remove these steps from [workflow file](./.github/workflows/test-and-release.yml)
+Once you have followed the steps above and created a gist, uncomment these lines in the [workflow file](./.github/workflows/test-and-release.yml)
 
 ```
-# Steps to remove -> Get Coverage for badge 🔢 and Create coverage badge ✍🏽
-
 - name: Get Coverage for badge 🔢
   run: |
     COVERAGE="$(cat coverage/coverage-summary.json | jq -r '.total.lines.pct')"
