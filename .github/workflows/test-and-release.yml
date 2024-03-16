@@ -40,15 +40,15 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies ⏬
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build ⏰
-        run: pnpm build
+        run: pnpm run build
         env:
           NODE_ENV: production
 
       - name: Test 🔫
-        run: pnpm test:coverage
+        run: pnpm run test:coverage
 
       - name: Report Coverage 📝
         if: always() # Also generate the report if tests are failing
@@ -99,7 +99,7 @@ jobs:
         uses: pnpm/action-setup@v2
         id: pnpm-install
         with:
-          version: 7
+          version: 8
           run_install: false
 
       - name: Get pnpm store directory 🏪
@@ -117,7 +117,7 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies ⏬
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build ⏰
         run: pnpm build
