@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 
-import { add, subtract } from '~/math';
+import { add, subtract } from '~/math/math';
 
 describe('math', () => {
   describe('add', () => {
