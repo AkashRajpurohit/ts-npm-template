@@ -2,8 +2,8 @@
 <h3 align="center">A project template to bootstrap NPM package with Typescript</h3>
 <br />
 <p align="center">
-  <a href="https://github.com/AkashRajpurohit/ts-npm-template/actions/workflows/test-and-release.yml">
-    <img alt="Build states" src="https://github.com/AkashRajpurohit/ts-npm-template/actions/workflows/test-and-release.yml/badge.svg?branch=main">
+  <a href="https://github.com/AkashRajpurohit/ts-npm-template/actions/workflows/ci.yml">
+    <img alt="Build states" src="https://github.com/AkashRajpurohit/ts-npm-template/actions/workflows/ci.yml/badge.svg?branch=main">
   </a>
   <a href="https://www.npmjs.com/package/@akashrajpurohit/ts-npm-template">
     <img alt="npm latest version" src="https://img.shields.io/npm/v/@akashrajpurohit/ts-npm-template/latest.svg">
@@ -26,6 +26,8 @@
     <a href="https://github.com/AkashRajpurohit/ts-npm-template/issues/new?template=bug_report.md">Bug report</a>
     ·
     <a href="https://github.com/AkashRajpurohit/ts-npm-template/issues/new?template=feature_request.md">Feature request</a>
+    ·
+    <a href="https://akashrajpurohit.github.io/ts-npm-template">Read Docs</a>
   </p>
 </p>
 <br />
@@ -55,7 +57,7 @@ If you want to generate a code coverage badge for your package, you need to foll
 
 You need to add the `GIST_SECRET` in the [github actions secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) if you are planning to add the code coverage badge.
 
-Once you have followed the steps above and created a gist, uncomment these lines in the [workflow file](./.github/workflows/test-and-release.yml)
+Once you have followed the steps above and created a gist, uncomment these lines in the [workflow file](./.github/workflows/ci.yml)
 
 ```
 - name: Get Coverage for badge 🔢
@@ -75,13 +77,22 @@ Once you have followed the steps above and created a gist, uncomment these lines
     namedLogo: vitest
 ```
 
-> Note: Make sure you change the `<gist-id>` and `<file-name>` in the [test-and-release.yml](./.github/workflows/test-and-release.yml) file along with the gist id in the coverage badge link in the README.md file.
+> Note: Make sure you change the `<gist-id>` and `<file-name>` in the [ci.yml](./.github/workflows/ci.yml) file along with the gist id in the coverage badge link in the README.md file.
 
-## Technology Stack 🚀
+## Auto generate docs 📚
+
+The project is configured to auto-generate the documentation using [typedoc](https://typedoc.org/). The documentation is generated in the `docs` folder.
+
+You can enable github pages to serve the documentation by following the steps mentioned in the [github pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+
+As part of the CI pipeline, the documentation is generated and pushed to the `main` branch with `[skip ci]` commit message so the new release is not triggered. The commit is generated from the Github user `FindingAkash` which is a bot user. You can change the user by updating the [workflow file](./.github/workflows/ci.yml).
+
+## Technology stack 🚀
 
 - 🙏🏾 [Typescript](https://www.typescriptlang.org/) with [tsup](https://tsup.egoist.dev/) build tool.
 - ⚡️ [Vitest](https://vitest.dev/) - Unit Test Framework
 - 📦 [Semantic Release](https://semantic-release.gitbook.io/semantic-release/) - Fully automated version management and package publishing.
+- 📖 [Typedoc](https://typedoc.org/) - Generate documentation of your package.
 - 🔀 [Github Actions](https://github.com/features/actions) - CI pipelines
 - 💪 [PNPM](https://pnpm.io/) - Package manager
 

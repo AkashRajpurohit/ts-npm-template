@@ -1,6 +1,14 @@
-name: Release
+name: CI
 
-on: [push, workflow_dispatch]
+on:
+  push:
+    branches:
+      - main
+      - feat/*
+      - fix/*
+    paths-ignore:
+      - docs/**
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -77,8 +85,8 @@ jobs:
           path: coverage/
 
   release:
-    # Release only when code is pushed to main branch
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    # Release only when code is pushed to main branch and [skip ci] is not present
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, '[skip ci]')}}
     runs-on: ubuntu-latest
     permissions:
       contents: write # to be able to publish a GitHub release
@@ -129,3 +137,54 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: pnpm semantic-release
+
+  build_docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    needs: [release]
+    steps:
+      - name: Checkout 🧳
+        uses: actions/checkout@v4
+
+      - name: Install Node.js 🔥
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install pnpm 👀
+        uses: pnpm/action-setup@v3
+        id: pnpm-install
+        with:
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory 🏪
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Setup pnpm cache 💰
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies ⏬
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Build Docs ⏰
+        run: pnpm build:docs
+
+      - name: Commit and Push 🚀
+        if: always()
+        uses: stefanzweifel/git-auto-commit-action@v5.0.0
+        with:
+          commit_message: 'docs: :rocket: docs updated [skip ci]'
+          commit_user_name: FindingAkash
+          commit_user_email: bot@akashrajpurohit.com
+          commit_author: FindingAkash <bot@akashrajpurohit.com>
