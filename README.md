@@ -85,8 +85,6 @@ The project is configured to auto-generate the documentation using [typedoc](htt
 
 You can enable github pages to serve the documentation by following the steps mentioned in the [github pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
 
-As part of the CI pipeline, the documentation is generated and pushed to the `main` branch with `[skip ci]` commit message so the new release is not triggered. The commit is generated from the Github user `FindingAkash` which is a bot user. You can change the user by updating the [workflow file](./.github/workflows/ci.yml).
-
 ## Technology stack 🚀
 
 - 🙏🏾 [Typescript](https://www.typescriptlang.org/) with [tsup](https://tsup.egoist.dev/) build tool.
