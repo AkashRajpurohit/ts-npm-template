@@ -35,6 +35,8 @@
 
 `@akashrajpurohit/ts-npm-template` is a opinionated bootstrap template to create NPM packages.
 
+Read more about the template and how it works in [this guide](https://akashrajpurohit.com/blog/building-and-publishing-typescript-npm-packages-a-stepbystep-guide/?ref=ts-npm-template-readme).
+
 ## Usage 💻
 
 Click on the **"Use this template"** button from the options to create a new repository using this template.
@@ -83,7 +85,7 @@ Once you have followed the steps above and created a gist, uncomment these lines
 
 The project is configured to auto-generate the documentation using [typedoc](https://typedoc.org/). The documentation is generated in the `docs` folder.
 
-You can enable github pages to serve the documentation by following the steps mentioned in the [github pages documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+The documentation will get generated when the code is pushed to the `main` branch. You can also generate the documentation locally by running the command `pnpm run build:docs`.
 
 ## Technology stack 🚀
 
