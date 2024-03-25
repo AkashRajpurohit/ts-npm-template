@@ -8,11 +8,11 @@ There are multiple ways to contribute to this project. The most common way is to
 
 ### Reporting bugs
 
-If you find any bugs, you can report them by [creating an bug report](https://github.com/AkashRajpurohit/ts-npm-template/issues/new?template=bug_report.md). Please make sure to include as much information as possible so that it's easier to reproduce the bug.
+If you find any bugs, you can report them by [creating an bug report](https://github.com/AkashRajpurohit/ts-npm-template/issues/new?template=bug_report.yml). Please make sure to include as much information as possible so that it's easier to reproduce the bug.
 
 ### Requesting features
 
-If you feel that the project is missing a feature, you can raise a [feature request](https://github.com/AkashRajpurohit/ts-npm-template/issues/new?template=feature_request.md) on GitHub and I'll look into it or better yet, you can open a pull request with the feature.
+If you feel that the project is missing a feature, you can raise a [feature request](https://github.com/AkashRajpurohit/ts-npm-template/issues/new?template=feature_request.yml) on GitHub and I'll look into it or better yet, you can open a pull request with the feature.
 
 ### Commit messages
 
