@@ -53,6 +53,8 @@ Save this token as `NPM_TOKEN` in [github actions secrets](https://docs.github.c
 
 If you want to generate a code coverage badge for your package, you need to follow the steps and configure the gist mentioned by [dynamic-badges-action](https://github.com/Schneegans/dynamic-badges-action).
 
+You need to add the `GIST_SECRET` in the [github actions secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) if you are planning to add the code coverage badge.
+
 Once you have followed the steps above and created a gist, uncomment these lines in the [workflow file](./.github/workflows/test-and-release.yml)
 
 ```
@@ -65,8 +67,8 @@ Once you have followed the steps above and created a gist, uncomment these lines
   uses: schneegans/dynamic-badges-action@v1.6.0
   with:
     auth: ${{ secrets.GIST_SECRET }}
-    gistID: 275fdb9d0c3b23cafa916535c807ce6a
-    filename: ts-npm-template-coverage.json
+    gistID: <gist-id>
+    filename: <file-name>.json
     label: Code Coverage
     message: ${{ env.COVERAGE }}
     color: green
