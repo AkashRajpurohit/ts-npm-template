@@ -50,11 +50,6 @@ jobs:
       - name: Install dependencies ⏬
         run: pnpm install --no-frozen-lockfile
 
-      - name: Build ⏰
-        run: pnpm run build
-        env:
-          NODE_ENV: production
-
       - name: Test 🔫
         run: pnpm run test:coverage
 
