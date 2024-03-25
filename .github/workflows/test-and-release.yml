@@ -63,8 +63,8 @@ jobs:
       #   uses: schneegans/dynamic-badges-action@v1.6.0
       #   with:
       #     auth: ${{ secrets.GIST_SECRET }}
-      #     gistID: 275fdb9d0c3b23cafa916535c807ce6a
-      #     filename: ts-npm-template-coverage.json
+      #     gistID: <gist-id>
+      #     filename: <file-name>.json
       #     label: Code Coverage
       #     message: ${{ env.COVERAGE }}
       #     color: green

@@ -47,7 +47,7 @@ Few configurations are required for making the publishing and releasing to NPM a
 
 First thing is to generate a NPM token. Automation tokens are recommended since they can be used for an automated workflow, even when your account is configured to use the [auth-and-writes level of 2FA](https://docs.npmjs.com/about-two-factor-authentication#authorization-and-writes).
 
-Save this token as `NPM_TOKEN`.
+Save this token as `NPM_TOKEN` in [github actions secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
 
 ### Code coverage badge
 
@@ -72,6 +72,8 @@ Once you have followed the steps above and created a gist, uncomment these lines
     color: green
     namedLogo: vitest
 ```
+
+> Note: Make sure you change the `<gist-id>` and `<file-name>` in the [test-and-release.yml](./.github/workflows/test-and-release.yml) file along with the gist id in the coverage badge link in the README.md file.
 
 ## Technology Stack 🚀
 
