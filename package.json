@@ -99,6 +99,30 @@
                 "section": "Documentation Changes"
               },
               {
+                "type": "perf",
+                "section": "Performance Improvements"
+              },
+              {
+                "type": "refactor",
+                "section": "Code Refactoring"
+              },
+              {
+                "type": "test",
+                "section": "Tests"
+              },
+              {
+                "type": "chore",
+                "section": "Miscellaneous Chores"
+              },
+              {
+                "type": "revert",
+                "section": "Reverts"
+              },
+              {
+                "type": "style",
+                "section": "Code Style Changes"
+              },
+              {
                 "type": "build",
                 "section": "Dependencies and Other Build Updates",
                 "hidden": false
