@@ -93,6 +93,13 @@ Follow the [contribution guidelines](./CONTRIBUTING.md) to contribute to this pr
 
 If you encounter any problems feel free to open an [issue](https://github.com/AkashRajpurohit/ts-npm-template/issues/new?template=bug_report.md). If you feel the project is missing a feature, please raise a [ticket](https://github.com/AkashRajpurohit/ts-npm-template/issues/new?template=feature_request.md) on GitHub and I'll look into it. Pull requests are also welcome.
 
+## Projects using this template 🙌🏽
+
+- [AkashRajpurohit/snowflake-id](https://github.com/AkashRajpurohit/snowflake-id) - Inspiration for this template.
+- [AkashRajpurohit/utils](https://github.com/AkashRajpurohit/utils) - Common utility functions.
+
+> Are you using this template for your project? Feel free to open a PR and add your project to the list.
+
 ## Where to find me? 👀
 
 [![Website Badge](https://img.shields.io/badge/-akashrajpurohit.com-3b5998?logo=google-chrome&logoColor=white)](https://akashrajpurohit.com/)
