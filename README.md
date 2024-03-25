@@ -39,8 +39,6 @@ Click on the **"Use this template"** button from the options to create a new rep
 
 That is pretty much it, follow the steps for creating a new repository and its done 🎉
 
-> Refer to [Sample README](./README.sample.md) file to setup docs and instructions for your package.
-
 ## Configurations ⚙️
 
 ### Release to NPM
