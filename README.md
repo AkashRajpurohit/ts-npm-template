@@ -2,8 +2,8 @@
 <h3 align="center">A project template to bootstrap NPM package with Typescript</h3>
 <br />
 <p align="center">
-  <a href="https://github.com/AkashRajpurohit/ts-npm-template/actions/workflows/ci.yml">
-    <img alt="Build states" src="https://github.com/AkashRajpurohit/ts-npm-template/actions/workflows/ci.yml/badge.svg?branch=main">
+  <a href="https://github.com/AkashRajpurohit/ts-npm-template/actions/workflows/release.yml">
+    <img alt="Build states" src="https://github.com/AkashRajpurohit/ts-npm-template/actions/workflows/release.yml/badge.svg?branch=main">
   </a>
   <a href="https://www.npmjs.com/package/@akashrajpurohit/ts-npm-template">
     <img alt="npm latest version" src="https://img.shields.io/npm/v/@akashrajpurohit/ts-npm-template/latest.svg">
