@@ -16,7 +16,7 @@ If you feel that the project is missing a feature, you can raise a [feature requ
 
 ### Commit messages
 
-Please make sure to follow the [conventional commit messages](https://www.conventionalcommits.org/en/v1.0.0/) format while making changes. This helps in generating changelogs and versioning the package.
+Please make sure to follow the [conventional commit messages](https://www.conventionalcommits.org/en/v1.0.0/) format while making changes. While this is not a strict requirement, it is the general practice followed in this project.
 
 ### Changesets
 
