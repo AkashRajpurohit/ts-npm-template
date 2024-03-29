@@ -45,6 +45,12 @@ That is pretty much it, follow the steps for creating a new repository and its d
 
 ## Configurations ⚙️
 
+### Github Actions
+
+In order for changesets to be able to create pull requests, you need to allow it to create and approve pull requests. You can find these settings under the repository settings in the "Actions" tab.
+
+![Allow changesets to create pull requests](./assets/github-action.png)
+
 ### Release to NPM
 
 Few configurations are required for making the publishing and releasing to NPM automated.
