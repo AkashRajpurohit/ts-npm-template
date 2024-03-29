@@ -2,12 +2,9 @@ name: CI ⚙️
 
 on:
   push:
+  pull_request:
     branches:
       - main
-      - feat/*
-      - fix/*
-    paths-ignore:
-      - docs/**
   workflow_dispatch:
 
 concurrency:
@@ -78,57 +75,3 @@ jobs:
         with:
           name: coverage
           path: coverage/
-
-  release:
-    # Release only when code is pushed to main branch and [skip ci] is not present
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, '[skip ci]')}}
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write # to be able to publish a GitHub release
-      issues: write # to be able to comment on released issues
-      pull-requests: write # to be able to comment on released pull requests
-      id-token: write # to enable use of OIDC for npm provenance
-    needs: [test]
-    steps:
-      - name: Checkout 🧳
-        uses: actions/checkout@v4
-
-      - name: Install Node.js 🔥
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Install pnpm 👀
-        uses: pnpm/action-setup@v3
-        id: pnpm-install
-        with:
-          version: 8
-          run_install: false
-
-      - name: Get pnpm store directory 🏪
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - name: Setup pnpm cache 💰
-        uses: actions/cache@v4
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies ⏬
-        run: pnpm install --no-frozen-lockfile
-
-      - name: Build ⏰
-        run: pnpm build
-        env:
-          NODE_ENV: production
-
-      - name: Release 🚀
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: pnpm semantic-release
