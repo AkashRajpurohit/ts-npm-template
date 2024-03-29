@@ -1,4 +1,4 @@
-name: Build and Deploy Docs 📚
+name: Release 🚀
 
 on:
   push:
@@ -6,14 +6,19 @@ on:
       - main
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  build:
+  release:
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, '[skip ci]')}}
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
     steps:
       - name: Checkout 🧳
         uses: actions/checkout@v4
@@ -47,22 +52,19 @@ jobs:
       - name: Install dependencies ⏬
         run: pnpm install --no-frozen-lockfile
 
-      - name: Build Docs ⏰
-        run: pnpm run build:docs
+      - name: Build ⏰
+        run: pnpm build
+        env:
+          NODE_ENV: production
 
-      - name: Upload Pages Artifact ☁️
-        uses: actions/upload-pages-artifact@v3
-        id: deployment
+      - name: Release 🚀
+        id: changesets
+        uses: changesets/action@v1
         with:
-          path: ./docs  # This should be your TypeDoc "out" path.
-
-  deploy:
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages 🚀
-        id: deployment
-        uses: actions/deploy-pages@v4
+          version: pnpm run version
+          publish: pnpm exec changeset publish
+          commit: "[ci] release"
+          title: "[ci] release"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

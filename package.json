@@ -1,6 +1,6 @@
 {
   "name": "@akashrajpurohit/ts-npm-template",
-  "version": "0.0.0-development",
+  "version": "1.6.0",
   "description": "A project template to bootstrap NPM package with Typescript",
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
   "keywords": [
     "typescript-template",
     "npm-boilerplate",
-    "semantic-release-boilerplate"
+    "changesets-boilerplate"
   ],
   "license": "MIT",
   "main": "./dist/index.js",
@@ -46,14 +46,16 @@
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest watch",
-    "semantic-release": "semantic-release"
+    "changeset": "changeset",
+    "version": "changeset version && pnpm install --no-frozen-lockfile && pnpm run format",
+    "release": "changeset publish"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.6.2",
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.1",
     "@types/node": "^20.11.30",
     "@vitest/coverage-v8": "^1.4.0",
-    "conventional-changelog-conventionalcommits": "^7.0.2",
-    "semantic-release": "^23.0.6",
     "tsup": "^8.0.2",
     "typedoc": "^0.25.12",
     "typescript": "^5.4.3",
