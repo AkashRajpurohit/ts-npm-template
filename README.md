@@ -91,7 +91,7 @@ The documentation will get generated when the code is pushed to the `main` branc
 
 - 🙏🏾 [Typescript](https://www.typescriptlang.org/) with [tsup](https://tsup.egoist.dev/) build tool.
 - ⚡️ [Vitest](https://vitest.dev/) - Unit Test Framework
-- 📦 [Semantic Release](https://semantic-release.gitbook.io/semantic-release/) - Fully automated version management and package publishing.
+- 📦 [Changesets](https://github.com/changesets/changesets) - A way to manage your versioning and changelogs.
 - 📖 [Typedoc](https://typedoc.org/) - Generate documentation of your package.
 - 🔀 [Github Actions](https://github.com/features/actions) - CI pipelines
 - 💪 [PNPM](https://pnpm.io/) - Package manager
