@@ -65,10 +65,10 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          version: pnpm run version
-          publish: pnpm exec changeset publish
-          commit: "[ci] release"
-          title: "[ci] release"
+          version: pnpm changeset version
+          publish: pnpm changeset publish
+          commit: "ci: :package: release"
+          title: "ci: :package: release"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

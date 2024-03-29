@@ -46,9 +46,7 @@
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest watch",
-    "changeset": "changeset",
-    "version": "changeset version && pnpm install --no-frozen-lockfile && pnpm run format",
-    "release": "changeset publish"
+    "changeset": "changeset"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.6.2",
