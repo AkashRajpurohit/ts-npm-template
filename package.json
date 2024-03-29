@@ -1,6 +1,6 @@
 {
   "name": "@akashrajpurohit/ts-npm-template",
-  "version": "1.6.0",
+  "version": "2.0.0",
   "description": "A project template to bootstrap NPM package with Typescript",
   "repository": {
     "type": "git",
