@@ -39,9 +39,18 @@ Read more about the template and how it works in [this guide](https://akashrajpu
 
 ## Usage 💻
 
-Click on the **"Use this template"** button from the options to create a new repository using this template.
+Click on the **"Use this template"** button from the options to create a new repository using this template. This will create a new repository with the same structure as this repository.
 
-That is pretty much it, follow the steps for creating a new repository and its done 🎉
+That is pretty much it, follow the [configuration steps](#configurations-⚙️) for setting up your package and its done 🎉
+
+## Technology stack 🚀
+
+- 🙏🏾 [Typescript](https://www.typescriptlang.org/) with [tsup](https://tsup.egoist.dev/) build tool.
+- ⚡️ [Vitest](https://vitest.dev/) - Unit Test Framework
+- 📦 [Changesets](https://github.com/changesets/changesets) - A way to manage your versioning and changelogs.
+- 📖 [Typedoc](https://typedoc.org/) - Generate documentation of your package.
+- 🔀 [Github Actions](https://github.com/features/actions) - CI pipelines
+- 💪 [PNPM](https://pnpm.io/) - Package manager
 
 ## Configurations ⚙️
 
@@ -92,15 +101,6 @@ Once you have followed the steps above and created a gist, uncomment these lines
 The project is configured to auto-generate the documentation using [typedoc](https://typedoc.org/). The documentation is generated in the `docs` folder.
 
 The documentation will get generated when the code is pushed to the `main` branch. You can also generate the documentation locally by running the command `pnpm run build:docs`.
-
-## Technology stack 🚀
-
-- 🙏🏾 [Typescript](https://www.typescriptlang.org/) with [tsup](https://tsup.egoist.dev/) build tool.
-- ⚡️ [Vitest](https://vitest.dev/) - Unit Test Framework
-- 📦 [Changesets](https://github.com/changesets/changesets) - A way to manage your versioning and changelogs.
-- 📖 [Typedoc](https://typedoc.org/) - Generate documentation of your package.
-- 🔀 [Github Actions](https://github.com/features/actions) - CI pipelines
-- 💪 [PNPM](https://pnpm.io/) - Package manager
 
 ## Contributing 🫱🏻‍🫲🏼
 
