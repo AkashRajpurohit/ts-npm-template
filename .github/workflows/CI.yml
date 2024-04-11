@@ -6,6 +6,9 @@ on:
 
 permissions:
   pull-requests: write
+  contents: write
+  issues: write
+  id-token: write
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
