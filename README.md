@@ -114,6 +114,7 @@ If you encounter any problems feel free to open an [issue](https://github.com/Ak
 
 - [AkashRajpurohit/snowflake-id](https://github.com/AkashRajpurohit/snowflake-id) - Inspiration for this template.
 - [AkashRajpurohit/utils](https://github.com/AkashRajpurohit/utils) - Common utility functions.
+- [AkashRajpurohit/remark-add-query-param](https://github.com/AkashRajpurohit/remark-add-query-param) - Remark plugin to add query params to links.
 
 > Are you using this template for your project? Feel free to open a PR and add your project to the list.
 
