@@ -42,22 +42,22 @@
     "build": "NODE_ENV=production tsup",
     "build:docs": "typedoc --out docs ./src/index.ts",
     "dev": "tsup --watch",
-    "format": "biome check --apply ./src",
+    "format": "biome check --write ./src",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest watch",
     "changeset": "changeset"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.6.4",
+    "@biomejs/biome": "^1.8.2",
     "@changesets/changelog-github": "^0.5.0",
-    "@changesets/cli": "^2.27.1",
-    "@types/node": "^20.12.7",
-    "@vitest/coverage-v8": "^1.4.0",
-    "tsup": "^8.0.2",
-    "typedoc": "^0.25.13",
-    "typescript": "^5.4.5",
-    "vitest": "^1.4.0"
+    "@changesets/cli": "^2.27.5",
+    "@types/node": "^20.14.8",
+    "@vitest/coverage-v8": "^1.6.0",
+    "tsup": "^8.1.0",
+    "typedoc": "^0.26.0",
+    "typescript": "^5.5.2",
+    "vitest": "^1.6.0"
   },
   "publishConfig": {
     "access": "public"
