@@ -1,5 +1,13 @@
 # @akashrajpurohit/ts-npm-template
 
+## 2.2.1
+
+### Patch Changes
+
+- [`8d4a5bc`](https://github.com/AkashRajpurohit/ts-npm-template/commit/8d4a5bc738a430643b76ebee1370e6ae13dd9e6f) Thanks [@AkashRajpurohit](https://github.com/AkashRajpurohit)! - build: :wrench: upgraded node to 20.15.0
+
+- [`ab28927`](https://github.com/AkashRajpurohit/ts-npm-template/commit/ab28927d437a2cfbd58ef7af44b80d3219a5ec15) Thanks [@AkashRajpurohit](https://github.com/AkashRajpurohit)! - build(deps): :arrow_up: dependencies bumped up
+
 ## 2.2.0
 
 ### Minor Changes
