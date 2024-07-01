@@ -22,13 +22,13 @@ devDependencies:
     version: 1.6.0(vitest@1.6.0)
   tsup:
     specifier: ^8.1.0
-    version: 8.1.0(typescript@5.5.2)
+    version: 8.1.0(typescript@5.5.3)
   typedoc:
     specifier: ^0.26.0
-    version: 0.26.0(typescript@5.5.2)
+    version: 0.26.0(typescript@5.5.3)
   typescript:
     specifier: ^5.5.2
-    version: 5.5.2
+    version: 5.5.3
   vitest:
     specifier: ^1.6.0
     version: 1.6.0(@types/node@20.14.8)
@@ -3274,7 +3274,7 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
-  /tsup@8.1.0(typescript@5.5.2):
+  /tsup@8.1.0(typescript@5.5.3):
     resolution: {integrity: sha512-UFdfCAXukax+U6KzeTNO2kAARHcWxmKsnvSPXUcfA1D+kU05XDccCrkffCQpFaWDsZfV0jMyTsxU39VfCp6EOg==}
     engines: {node: '>=18'}
     hasBin: true
@@ -3307,7 +3307,7 @@ packages:
       source-map: 0.8.0-beta.0
       sucrase: 3.35.0
       tree-kill: 1.2.2
-      typescript: 5.5.2
+      typescript: 5.5.3
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -3391,7 +3391,7 @@ packages:
       possible-typed-array-names: 1.0.0
     dev: true
 
-  /typedoc@0.26.0(typescript@5.5.2):
+  /typedoc@0.26.0(typescript@5.5.3):
     resolution: {integrity: sha512-OcYevjHsMN8DfpaL0dSBGAEBhOxuBB5Au8QVs9oz9iB0kRStPZwXLFWqh9gwbMUxNjW3yQuIM5GrVVauMJ2Akw==}
     engines: {node: '>= 18'}
     hasBin: true
@@ -3402,12 +3402,12 @@ packages:
       markdown-it: 14.1.0
       minimatch: 9.0.4
       shiki: 1.9.0
-      typescript: 5.5.2
+      typescript: 5.5.3
       yaml: 2.4.5
     dev: true
 
-  /typescript@5.5.2:
-    resolution: {integrity: sha512-NcRtPEOsPFFWjobJEtfihkLCZCXZt/os3zf8nTxjVH3RvTSxjrCamJpbExGvYOF+tFHc3pA65qpdwPbzjohhew==}
+  /typescript@5.5.3:
+    resolution: {integrity: sha512-/hreyEujaB0w76zKo6717l3L0o/qEUtRgdvUBvlkhoWeOVMjMuHNHk0BRBzikzuGDqNmPQbg5ifMEqsHLiIUcQ==}
     engines: {node: '>=14.17'}
     hasBin: true
     dev: true
