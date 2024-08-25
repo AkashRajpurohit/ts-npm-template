@@ -1,5 +1,19 @@
 # @akashrajpurohit/ts-npm-template
 
+## 2.2.2
+
+### Patch Changes
+
+- [`172334b`](https://github.com/AkashRajpurohit/ts-npm-template/commit/172334b290295d844a821233fa068b7049bd149b) Thanks [@AkashRajpurohit](https://github.com/AkashRajpurohit)! - chore: :truck: restructure exports config
+
+- [`f33f6f3`](https://github.com/AkashRajpurohit/ts-npm-template/commit/f33f6f347c84e95340d6488b34680fb3e4f1395c) Thanks [@AkashRajpurohit](https://github.com/AkashRajpurohit)! - build(deps): :arrow_up: deps bumped up
+
+- [`20ecd7b`](https://github.com/AkashRajpurohit/ts-npm-template/commit/20ecd7b9b0e98afc2372a0134437e39c5d901a32) Thanks [@AkashRajpurohit](https://github.com/AkashRajpurohit)! - chore: :wrench: remove types from exports
+
+- [`325a460`](https://github.com/AkashRajpurohit/ts-npm-template/commit/325a4606f09e97bd12be026afe80ff727e8e75f3) Thanks [@AkashRajpurohit](https://github.com/AkashRajpurohit)! - chore: :wrench: update tsup.config.ts with project name
+
+- [`e28c4b9`](https://github.com/AkashRajpurohit/ts-npm-template/commit/e28c4b9b7cf5df50815037d8b0e34a7584a03eb5) Thanks [@AkashRajpurohit](https://github.com/AkashRajpurohit)! - chore: :wrench: drop iife support
+
 ## 2.2.1
 
 ### Patch Changes
