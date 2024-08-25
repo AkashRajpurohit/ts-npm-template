@@ -8,6 +8,7 @@ export default defineConfig(({ watch = false }) => ({
   entry: {
     index: 'src/index.ts',
   },
+  name: 'ts-npm-template',
   external: [],
   format: ['cjs', 'esm', 'iife'],
   treeshake: isProduction,
