@@ -10,7 +10,7 @@ export default defineConfig(({ watch = false }) => ({
   },
   name: 'ts-npm-template',
   external: [],
-  format: ['cjs', 'esm', 'iife'],
+  format: ['cjs', 'esm'],
   treeshake: isProduction,
   minify: isProduction,
   sourcemap: isProduction,
