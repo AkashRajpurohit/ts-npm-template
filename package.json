@@ -53,7 +53,9 @@
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest watch",
     "changeset": "changeset",
-    "check-exports": "attw --pack ."
+    "check-format": "biome check ./src",
+    "check-exports": "attw --pack .",
+    "ci": "npm run check-exports && npm run check-format && npm run lint && npm run test:coverage && npm run build"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.15.4",

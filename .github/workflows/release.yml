@@ -32,11 +32,8 @@ jobs:
       - name: Install dependencies ⏬
         run: pnpm install --no-frozen-lockfile
 
-      - name: Test 🔫
-        run: pnpm run test:coverage
-
-      - name: Build ⏰
-        run: pnpm build
+      - name: CI ⚙️
+        run: pnpm run ci
         env:
           NODE_ENV: production
 
