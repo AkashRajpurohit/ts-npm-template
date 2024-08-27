@@ -3,8 +3,9 @@
     "baseUrl": ".",
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
-    "module": "ESNext",
+    "module": "Preserve",
     "moduleResolution": "Bundler",
+    "noEmit": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -12,7 +13,6 @@
       "~/*": ["./src/*"]
     },
     "resolveJsonModule": true,
-    "sourceMap": true,
     "strict": true,
     "target": "ESNext"
   },

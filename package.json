@@ -48,6 +48,7 @@
     "build:docs": "typedoc --out docs ./src/index.ts",
     "dev": "tsup --watch",
     "format": "biome check --write ./src",
+    "lint": "tsc",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:watch": "vitest watch",
