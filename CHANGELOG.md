@@ -1,5 +1,15 @@
 # @akashrajpurohit/ts-npm-template
 
+## 2.2.3
+
+### Patch Changes
+
+- [`3d2ae86`](https://github.com/AkashRajpurohit/ts-npm-template/commit/3d2ae86b8247f817e5aa92144a95103ade5a0e0f) Thanks [@AkashRajpurohit](https://github.com/AkashRajpurohit)! - feat: :wrench: add @arethetypeswrong/cli
+
+- [`185d5d8`](https://github.com/AkashRajpurohit/ts-npm-template/commit/185d5d8a1ae617945afbe369f02fa8d71a10a0d6) Thanks [@AkashRajpurohit](https://github.com/AkashRajpurohit)! - ci: :wrench: use new ci script command
+
+- [`ebd4dee`](https://github.com/AkashRajpurohit/ts-npm-template/commit/ebd4dee16ea510e4505d608ec1383f2d53e985b7) Thanks [@AkashRajpurohit](https://github.com/AkashRajpurohit)! - chore: :wrench: use tsc to lint
+
 ## 2.2.2
 
 ### Patch Changes
