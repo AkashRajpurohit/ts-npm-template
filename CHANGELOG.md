@@ -1,5 +1,11 @@
 # @akashrajpurohit/ts-npm-template
 
+## 2.2.4
+
+### Patch Changes
+
+- [`ba9034f`](https://github.com/AkashRajpurohit/ts-npm-template/commit/ba9034f2444ee757b1036c3be6aca597111a7ffc) Thanks [@AkashRajpurohit](https://github.com/AkashRajpurohit)! - build(deps): :arrow_up: packages bumped up
+
 ## 2.2.3
 
 ### Patch Changes
