@@ -58,16 +58,16 @@
     "ci": "npm run check-exports && npm run check-format && npm run lint && npm run test:coverage && npm run build"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.15.4",
-    "@biomejs/biome": "^1.8.3",
+    "@arethetypeswrong/cli": "^0.16.4",
+    "@biomejs/biome": "^1.9.3",
     "@changesets/changelog-github": "^0.5.0",
-    "@changesets/cli": "^2.27.7",
-    "@types/node": "^22.5.0",
-    "@vitest/coverage-v8": "^2.0.5",
-    "tsup": "^8.2.4",
-    "typedoc": "^0.26.6",
-    "typescript": "^5.5.4",
-    "vitest": "^2.0.5"
+    "@changesets/cli": "^2.27.8",
+    "@types/node": "^22.7.4",
+    "@vitest/coverage-v8": "^2.1.1",
+    "tsup": "^8.3.0",
+    "typedoc": "^0.26.7",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.1"
   },
   "publishConfig": {
     "access": "public"
