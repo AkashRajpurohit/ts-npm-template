@@ -11,7 +11,7 @@
   <a href="https://www.npmjs.com/package/@akashrajpurohit/ts-npm-template">
     <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/@akashrajpurohit/ts-npm-template">
   </a>
-  <img alt="Visitors count" src="https://visitor-badge.laobi.icu/badge?page_id=@akashrajpurohit~ts-npm-template.visitor-badge&style=flat-square&color=0088cc">
+  <img alt="Visitors" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fvc.akashrajpurohit.com%2Fc%2Fakash~gh~ts-npm-template&query=count&style=flat&logo=github&label=Visitors&color=066da5">
   <a href="https://github.com/AkashRajpurohit/ts-npm-template/actions">
     <img alt="Coverage" src="https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/AkashRajpurohit/275fdb9d0c3b23cafa916535c807ce6a/raw/ts-npm-template-coverage.json">
   </a>
